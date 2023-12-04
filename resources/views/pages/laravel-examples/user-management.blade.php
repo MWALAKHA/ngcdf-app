@@ -3,7 +3,7 @@
     <x-navbars.sidebar activePage="user-management"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="User Management"></x-navbars.navs.auth>
+        <x-navbars.navs.auth titlePage="Registered Users"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -97,10 +97,17 @@
                                       echo '<td class="align-middle">';
                                       echo '<form method="GET" action="user-management">';
                                       echo '<input type="hidden" name="id" value=" ">';
-                                      echo '<button type="submit" class="btn btn-danger btn-link" data-original-title="" title="">';
-                                      echo '<i class="material-icons">delete</i>';
+                                      //echo '<button type="submit" class="btn btn-danger btn-link" data-original-title="" title="">';
+                                      //echo '<i class="material-icons">delete</i>';
+                                      echo'<div class="ms-auto text-end">
+                                              <a class="btn btn-link text-danger text-gradient px-3 mb-0"
+                                                  href="javascript:;"><i
+                                                      class="material-icons text-sm me-2">delete</i>Delete</a>
+                                              <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                      class="material-icons text-sm me-2">edit</i>Edit</a>
+                                           </div>';
                                       echo '<div class="ripple-container"></div>';
-                                      echo '</button>';
+                                      //echo '</button>';
                                       echo '</form>';
                                       echo '</td>';
                                       echo '</tr>';

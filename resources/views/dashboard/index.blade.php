@@ -11,16 +11,16 @@
                         <div class="card-header p-3 pt-2">
                             <div
                                 class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">weekend</i>
+                                <i class="material-icons opacity-10 text-success">check_circle</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                                <h4 class="mb-0">$53k</h4>
+                                <p class="text-sm mb-0 text-capitalize">Active users</p>
+                                <h4 class="mb-0">{{ $onlineUsersCount = DB::table('users')->where('created_at', '>', now()->subMinutes(5))->count() }}</h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
                         <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than
+                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">{{ number_format($onlineUsersCount, 2) }}% </span>than
                                 lask week</p>
                         </div>
                     </div>
@@ -33,13 +33,13 @@
                                 <i class="material-icons opacity-10">group</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="mb-0">2,300</h4>
+                                <p class="text-sm mb-0 text-capitalize">Today's New Users</p>
+                                <h4 class="mb-0">{{ $count = DB::table('users')->whereDate('created_at', today())->count() }}</h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
                         <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than
+                            <p class="mb-0"><span class="text-success text-sm font-weight-bolder">{{ number_format($count, 2) }}% </span>than
                                 lask month</p>
                         </div>
                     </div>

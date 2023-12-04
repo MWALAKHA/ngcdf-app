@@ -21,6 +21,7 @@ class FormController extends Controller
         $user->password = $request->input('password');
         $user->save();
 
-        return redirect('/user-management')->with('message', 'User created successfully!');
+        return redirect('/user-management')->withStatus('User created successfully!');
+        //return back('/user-management')->withStatus('message','User created successfully.');
     }
 }
